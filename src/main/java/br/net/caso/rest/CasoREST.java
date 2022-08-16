@@ -32,7 +32,7 @@ public class CasoREST {
 //	public  List<CasoDTO>obterTodosCasosOng(){
 //		return lista;
 //	}
-	
+//
 //	@GetMapping("/casoOng/{id}")
 //	CasoDTO obterTodosCasosOng(@PathVariable("id") int id) {
 //		CasoDTO c = lista.stream().filter(csao -> csao.getId() == id).
