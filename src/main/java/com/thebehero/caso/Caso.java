@@ -3,10 +3,14 @@ package com.thebehero.caso;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
+
+import com.thebehero.descricao.Descricao;
 
 @Entity
 public class Caso {
@@ -22,7 +26,6 @@ public class Caso {
 	@NotNull
 	private String especie;
 	private String dta_recolhimento;
-	private String descricao;
 	private String image;
 
 	private String raca;
@@ -50,14 +53,6 @@ public class Caso {
 		this.dta_recolhimento = dta_recolhimento;
 	}
 
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
 	public String getImage() {
 		return image;
 	}
@@ -83,7 +78,9 @@ public class Caso {
 		this.nome = nome;
 	}
 
-
+	@OneToOne
+	@JoinColumn(nullable = false, unique= true)
+	private Descricao descricao;
 
 	@Override
 	public int hashCode() {
