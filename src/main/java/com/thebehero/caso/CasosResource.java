@@ -1,4 +1,4 @@
-package com.thebehero.caso.resource;
+package com.thebehero.caso;
 
 import java.util.List;
 
@@ -15,9 +15,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.thebehero.caso.model.Caso;
-import com.thebehero.caso.repository.Casos;
 
 @RestController
 @RequestMapping("/casos")
