@@ -1,4 +1,4 @@
-package com.thebehero.caso;
+package com.thebehero.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
