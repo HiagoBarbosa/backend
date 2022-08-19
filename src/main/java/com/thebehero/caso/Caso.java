@@ -79,10 +79,11 @@ public class Caso {
 		this.nome = nome;
 	}
 
+	
 	@OneToOne
 	@JoinColumn(nullable = false, unique= true)
 	private Descricao descricao;
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
