@@ -3,14 +3,11 @@ package com.thebehero.caso;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.thebehero.descricao.Descricao;
 
 @Entity
 public class Caso {
@@ -77,10 +74,6 @@ public class Caso {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-//
-//	@OneToOne
-//	@JoinColumn(nullable = false, unique= true)
-//	private Descricao descricao;
 
 	@Override
 	public int hashCode() {
