@@ -1,4 +1,4 @@
-package com.thebehero.caso;
+package com.thebehero.descricao;
 
 import java.util.List;
 
@@ -13,64 +13,60 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/casos")
-public class CasosResource {
-	
+
+
+public class DescricaoResource {
 	@Autowired
-	private Casos casos;
+	private Descricoes descricoes;
 	
 	@PostMapping
-	public Caso adicionar(@Valid @RequestBody Caso caso) {
-		return casos.save(caso);
+	public Descricao adicionar(@Valid @RequestBody Descricao descricao) {
+		return descricoes.save(descricao);
 	}
 	
 	@GetMapping
-	public List<Caso> listar() {
-		return casos.findAll();
+	public List<Descricao> listar() {
+		return descricoes.findAll();
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Caso> buscar(@PathVariable Long id) {
-		Caso caso = casos.getOne(id);
+	public ResponseEntity<Descricao> buscar(@PathVariable Long id) {
+		Descricao descricao = descricoes.getOne(id);
 		
-		if (caso == null) {
+		if (descricao == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		return ResponseEntity.ok(caso);
+		return ResponseEntity.ok(descricao);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Caso> atualizar(@PathVariable Long id, 
-			@Valid @RequestBody Caso caso) {
-		Caso existente = casos.getOne(id);
+	public ResponseEntity<Descricao> atualizar(@PathVariable Long id, 
+			@Valid @RequestBody Descricao descricao) {
+		Descricao existente = descricoes.getOne(id);
 		
 		if (existente == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		BeanUtils.copyProperties(caso, existente, "id");
+		BeanUtils.copyProperties(descricao, existente, "id");
 		
-		existente = casos.save(existente);
+		existente = descricoes.save(existente);
 		
 		return ResponseEntity.ok(existente);
 	}
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> remover(@PathVariable Long id) {
-		Caso caso = casos.getOne(id);
+		Descricao descricao = descricoes.getOne(id);
 		
-		if (caso == null) {
+		if (descricao == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		casos.delete(caso);
+		descricoes.delete(descricao);
 		
 		return ResponseEntity.noContent().build();
 	}
-	
 }
