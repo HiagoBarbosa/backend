@@ -1,5 +1,6 @@
 package com.thebehero.caso;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,6 +13,13 @@ import org.hibernate.annotations.GenericGenerator;
 
 import com.thebehero.descricao.Descricao;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Caso {
 	
@@ -21,10 +29,12 @@ public class Caso {
 	private Long id;
 	
 	@NotBlank
+	@Column(length = 150, nullable = false, unique = true)
 	private String nome;
 	
 	@NotNull
 	private String especie;
+	@Column(length = 150, nullable = false, unique = true)
 	private String dta_recolhimento;
 	private String image;
 
