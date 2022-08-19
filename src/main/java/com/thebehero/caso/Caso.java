@@ -74,6 +74,10 @@ public class Caso {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+//
+//	@OneToOne
+//	@JoinColumn(nullable = false, unique= true)
+//	private Descricao descricao;
 
 	@Override
 	public int hashCode() {
