@@ -4,13 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
-import lombok.*;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 public class Descricao{
 	
