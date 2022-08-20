@@ -1,11 +1,13 @@
 package com.thebehero.ong;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
+@Entity
 public class Ong {
 	@Id
 	@GeneratedValue(generator = "increment")
