@@ -10,7 +10,6 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.thebehero.descricao.Descricao;
 
 
 @Entity
@@ -21,15 +20,29 @@ public class Caso {
 	@GenericGenerator(name = "increment", strategy = "increment")
 	private Long id;
 	
-	@NotBlank
+	@NotNull
 	private String nome;
 	
 	@NotNull
 	private String especie;
+	@NotNull
 	private String dta_recolhimento;
+	@NotNull
 	private String image;
-
+	@NotNull
 	private String raca;
+	@NotNull
+	private String descricao;
+	
+	
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	
 	public String getRaca() {
 		return raca;
 	}
@@ -79,10 +92,6 @@ public class Caso {
 		this.nome = nome;
 	}
 
-	
-	@OneToOne
-	@JoinColumn(nullable = false, unique= true)
-	private Descricao descricao;
 	
 	@Override
 	public int hashCode() {

@@ -1,11 +1,10 @@
-package com.thebehero.descricao;
+package com.thebehero.ong;
 
 import java.util.List;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,59 +15,59 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.thebehero.caso.Caso;
 
 @RestController
-@RequestMapping("/descricoes")
-public class DescricaoResource {
-	@Autowired
-	private Descricoes descricoes;
+@RequestMapping("/Ongs")
+public class OngsResource {
+	private Ongs ongs;
 	
 	@PostMapping
-	public Descricao adicionar(@Valid @RequestBody Descricao descricao) {
-		return descricoes.save(descricao);
+	public Ong adicionar(@Valid @RequestBody Ong ong) {
+		return ongs.save(ong);
 	}
 	
 	@GetMapping
-	public List<Descricao> listar() {
-		return descricoes.findAll();
+	public List<Ong> listar() {
+		return ongs.findAll();
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Descricao> buscar(@PathVariable Long id) {
-		Descricao descricao = descricoes.getOne(id);
+	public ResponseEntity<Ong> buscar(@PathVariable Long id) {
+		Ong ong = ongs.getOne(id);
 		
-		if (descricao == null) {
+		if (ong == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		return ResponseEntity.ok(descricao);
+		return ResponseEntity.ok(ong);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Descricao> atualizar(@PathVariable Long id, 
-			@Valid @RequestBody Descricao descricao) {
-		Descricao existente = descricoes.getOne(id);
+	public ResponseEntity<Ong> atualizar(@PathVariable Long id, 
+			@Valid @RequestBody Ong ong) {
+		Ong existente = ongs.getOne(id);
 		
 		if (existente == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		BeanUtils.copyProperties(descricao, existente, "id");
+		BeanUtils.copyProperties(ong, existente, "id");
 		
-		existente = descricoes.save(existente);
+		existente = ongs.save(existente);
 		
 		return ResponseEntity.ok(existente);
 	}
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> remover(@PathVariable Long id) {
-		Descricao descricao = descricoes.getOne(id);
+		Ong ong = ongs.getOne(id);
 		
-		if (descricao == null) {
+		if (ong == null) {
 			return ResponseEntity.notFound().build();
 		}
 		
-		descricoes.delete(descricao);
+		ongs.delete(ong);
 		
 		return ResponseEntity.noContent().build();
 	}
