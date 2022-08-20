@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/Ongs")
+@RequestMapping("/ongs")
 public class OngsResource {
 	private Ongs ongs;
 	
