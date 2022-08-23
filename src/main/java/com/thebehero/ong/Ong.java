@@ -144,7 +144,6 @@ public class Ong {
 	}
 
 	@ManyToOne
-	@JoinColumn(nullable = false)
 	private Caso caso;
 	  
 		@Override
