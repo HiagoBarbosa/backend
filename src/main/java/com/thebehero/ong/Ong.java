@@ -3,6 +3,7 @@ package com.thebehero.ong;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
@@ -143,6 +144,7 @@ public class Ong {
 	}
 
 	@ManyToOne
+	@JoinColumn(nullable = false)
 	private Caso caso;
 	  
 		@Override
