@@ -3,9 +3,9 @@ package com.thebehero.caso;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.annotations.GenericGenerator;
 import java.io.*;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name="tb_caso")
 public class CasoEntidade implements Serializable {

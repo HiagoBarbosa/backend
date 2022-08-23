@@ -21,14 +21,14 @@ public class CasosRest {
 	
 	@Autowired
 	private ModelMapper mapper;
-/*	
+	
 	@PostMapping("/casos")
 	CasoDTO inserir(@RequestBody CasoDTO caso) {
 		casos.save(mapper.map(caso, CasoEntidade.class));
 		CasoEntidade csae = casos.findbyinserir(caso.getId());
 		return mapper.map(csae, CasoDTO.class);
 	}
-	*/
+	
 	@GetMapping
 	List<CasoDTO> listarTodos(){
 		List<CasoEntidade> lista = casos.findAll();
