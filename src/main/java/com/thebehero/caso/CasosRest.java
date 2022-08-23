@@ -29,7 +29,7 @@ public class CasosRest {
 		return mapper.map(csae, CasoDTO.class);
 	}
 	
-	@GetMapping
+	@GetMapping("/casos")
 	List<CasoDTO> listarTodos(){
 		List<CasoEntidade> lista = casos.findAll();
 		return lista.stream().map(e -> mapper.map(e, CasoDTO.class))
