@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,27 +16,37 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.stream.*;
 
 @RestController
 @RequestMapping("/casos")
-public class CasosResource {
+public class CasosRest {
 	
 	@Autowired
-	private Casos casos;
+	private CasosRepository casos;
+	
+	@Autowired
+	private ModelMapper mapper;
 	
 	@PostMapping
-	public Caso adicionar(@Valid @RequestBody Caso caso) {
-		return casos.save(caso);
+	CasoDTO inserir(@RequestBody CasoDTO caso) {
+		casos.save(mapper.map(caso, CasoEntidade.class));
+		CasoEntidade csae = casos.findbyinserir(caso.getId());
+		return mapper.map(csae, CasoDTO.class);
 	}
 	
 	@GetMapping
-	public List<Caso> listar() {
-		return casos.findAll();
+	List<CasoDTO> listarTodos(){
+		List<CasoEntidade> lista = casos.findAll();
+		return lista.stream().map(e -> mapper.map(e, CasoDTO.class))
+				.collect(Collectors.toList());
 	}
 	
+	
+/*	
 	@GetMapping("/{id}")
-	public ResponseEntity<Caso> buscar(@PathVariable Long id) {
-		Caso caso = casos.getOne(id);
+	public ResponseEntity<CasoDTO> buscar(@PathVariable Long id) {
+		CasoDTO caso = casos.getOne(id);
 		
 		if (caso == null) {
 			return ResponseEntity.notFound().build();
@@ -45,9 +56,9 @@ public class CasosResource {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Caso> atualizar(@PathVariable Long id, 
-			@Valid @RequestBody Caso caso) {
-		Caso existente = casos.getOne(id);
+	public ResponseEntity<CasoDTO> atualizar(@PathVariable Long id, 
+			@Valid @RequestBody CasoDTO caso) {
+		CasoDTO existente = casos.getOne(id);
 		
 		if (existente == null) {
 			return ResponseEntity.notFound().build();
@@ -62,7 +73,7 @@ public class CasosResource {
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> remover(@PathVariable Long id) {
-		Caso caso = casos.getOne(id);
+		CasoDTO caso = casos.getOne(id);
 		
 		if (caso == null) {
 			return ResponseEntity.notFound().build();
@@ -72,5 +83,5 @@ public class CasosResource {
 		
 		return ResponseEntity.noContent().build();
 	}
-	
+	*/
 }
