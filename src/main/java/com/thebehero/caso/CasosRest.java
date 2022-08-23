@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.stream.*;
 
 @CrossOrigin
-@RestController
+@RestController("/casos")
 public class CasosRest {
 	
 	@Autowired
@@ -29,7 +29,7 @@ public class CasosRest {
 		return mapper.map(csae, CasoDTO.class);
 	}
 	*/
-	@GetMapping("/casos")
+	@GetMapping
 	List<CasoDTO> listarTodos(){
 		List<CasoEntidade> lista = casos.findAll();
 		return lista.stream().map(e -> mapper.map(e, CasoDTO.class))
