@@ -7,6 +7,8 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.thebehero.caso.Caso;
+
 @Entity
 public class Ong {
 	@Id
@@ -139,7 +141,8 @@ public class Ong {
 		this.image = image;
 	}
 
-
+	
+	private Caso caso;
 	  
 		@Override
 		public int hashCode() {
