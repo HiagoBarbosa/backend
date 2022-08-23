@@ -32,7 +32,7 @@ public class CasosRest {
 	@PostMapping("/casos")
 	CasoDTO inserir(@RequestBody CasoDTO caso) {
 		casos.save(mapper.map(caso, CasoEntidade.class));
-		CasoEntidade csae = casos.findbyinserir(caso.getId());
+		CasoEntidade csae = casos.findbyinserir(caso.getNome());
 		return mapper.map(csae, CasoDTO.class);
 	}
 	
