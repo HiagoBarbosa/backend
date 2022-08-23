@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,8 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.stream.*;
 
+@CrossOrigin
 @RestController
-@RequestMapping("/casos")
 public class CasosRest {
 	
 	@Autowired
@@ -28,14 +29,14 @@ public class CasosRest {
 	@Autowired
 	private ModelMapper mapper;
 	
-	@PostMapping
+	@PostMapping("/casos")
 	CasoDTO inserir(@RequestBody CasoDTO caso) {
 		casos.save(mapper.map(caso, CasoEntidade.class));
 		CasoEntidade csae = casos.findbyinserir(caso.getId());
 		return mapper.map(csae, CasoDTO.class);
 	}
 	
-	@GetMapping
+	@GetMapping("/casos")
 	List<CasoDTO> listarTodos(){
 		List<CasoEntidade> lista = casos.findAll();
 		return lista.stream().map(e -> mapper.map(e, CasoDTO.class))
