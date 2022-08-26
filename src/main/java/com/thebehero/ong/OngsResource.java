@@ -15,18 +15,22 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.modelmapper.ModelMapper;
 
 @RestController
 @RequestMapping("/ongs")
 public class OngsResource {
 	@Autowired
 	private Ongs ongs;
+	private ModelMapper mapper;
 	
 	@PostMapping
 	public Ong adicionar(@Valid @RequestBody Ong ong) {
-		return ongs.save(ong);
+		ongs.save(ong);
+		Ong onglogin = ongs.findByLoginAndSenha(ong.getEmail(), ong.getPassword());
+		return mapper.map(onglogin, Ong.class);
 	}
+	
 	
 	@GetMapping
 	public List<Ong> listar() {
