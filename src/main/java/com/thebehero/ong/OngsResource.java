@@ -30,12 +30,6 @@ public class OngsResource {
 
 	}
 	
-	@PostMapping
-	public Ong login(@Valid @RequestBody Ong ong) {
-		Ong onglogin = ongs.findByLoginAndSenha(ong.getEmail(), ong.getPassword());
-		return mapper.map(onglogin, Ong.class);
-	}
-	
 	
 	@GetMapping
 	public List<Ong> listar() {
