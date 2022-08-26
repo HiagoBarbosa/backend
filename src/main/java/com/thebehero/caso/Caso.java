@@ -13,7 +13,7 @@ import org.hibernate.annotations.GenericGenerator;
 public class Caso {
 	
 	@Id
-	@GeneratedValue(generator = "increment")
+	@GeneratedValue(generator = "increment")  
 	@GenericGenerator(name = "increment", strategy = "increment")
 	private Long id;
 	
