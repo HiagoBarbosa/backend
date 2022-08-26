@@ -26,7 +26,12 @@ public class OngsResource {
 	
 	@PostMapping
 	public Ong adicionar(@Valid @RequestBody Ong ong) {
-		ongs.save(ong);
+		return ongs.save(ong);
+
+	}
+	
+	@PostMapping
+	public Ong login(@Valid @RequestBody Ong ong) {
 		Ong onglogin = ongs.findByLoginAndSenha(ong.getEmail(), ong.getPassword());
 		return mapper.map(onglogin, Ong.class);
 	}
