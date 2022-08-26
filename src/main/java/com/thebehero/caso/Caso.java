@@ -30,7 +30,75 @@ public class Caso {
 	private String raca;
 	@NotNull
 	private String descricao;
-	
+	@NotNull
+	private String email;
+	@NotNull
+	private String cep;
+	@NotNull
+	private String rua;
+	@NotNull
+	private int numero;
+	@NotNull
+	private String comp;
+	@NotNull
+	private int numFixo;
+	@NotNull
+	private int numMobile;
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+
+	public String getRua() {
+		return rua;
+	}
+
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public String getComp() {
+		return comp;
+	}
+
+	public void setComp(String comp) {
+		this.comp = comp;
+	}
+
+	public int getNumFixo() {
+		return numFixo;
+	}
+
+	public void setNumFixo(int numFixo) {
+		this.numFixo = numFixo;
+	}
+
+	public int getNumMobile() {
+		return numMobile;
+	}
+
+	public void setNumMobile(int numMobile) {
+		this.numMobile = numMobile;
+	}
 	
 	public String getDescricao() {
 		return descricao;
