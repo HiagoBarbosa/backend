@@ -1,87 +1,104 @@
-package com.thebehero.caso;
+package com.thebehero.voluntario;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
-
+import com.thebehero.doacao.Doacao;
 
 @Entity
-public class Caso {
-	
+public class Voluntario {
 	@Id
-	@GeneratedValue(generator = "increment")  
+	@GeneratedValue(generator = "increment")
 	@GenericGenerator(name = "increment", strategy = "increment")
 	private Long id;
+	@NotNull
+	private String nomeVoluntario;
+	@NotNull
+	private String emailVoluntario;
+	@NotNull
+	private String profissão;
+	@NotNull
+	private String rg;
+	@NotNull
+	private Long cpf;
+	@NotNull
+	private String cep;
+	@NotNull
+	private String rua;
+	private String numero;
+	private String comp;
+	private int numFixo;
+	private int numMobile;
 	
-	@NotNull
-	private String nomedocaso;
-	@NotNull
-	private String nomedaong;
-	@NotNull
-	private String especie;
-	@NotNull
-	private String dta_recolhimento;
-	@NotNull
-	private String image;
-	@NotNull
-	private String raca;
 	@NotNull
 	private String descricao;
 	@NotNull
-	private String email;
+	private String password;
 	@NotNull
-	private int cep;
-	@NotNull
-	private String rua;
-	private int numero;
-	private String comp;
-	@NotNull
-	private int numFixo;
-	@NotNull
-	private int numMobile;
-	@NotNull
-	private int cnpj;
-	public int getCnpj() {
-		return cnpj;
+	private String image;
+	
+	
+	@ManyToOne
+	private Doacao doacao;
+	
+	public Long getId() {
+		return id;
 	}
 
-	public void setCnpj(int cnpj) {
-		this.cnpj = cnpj;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getNomeVoluntario() {
+		return nomeVoluntario;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setNomeVoluntario(String nomeVoluntario) {
+		this.nomeVoluntario = nomeVoluntario;
 	}
 
-	public String getNomedocaso() {
-		return nomedocaso;
+	public String getEmailVoluntario() {
+		return emailVoluntario;
 	}
 
-	public void setNomedocaso(String nomedocaso) {
-		this.nomedocaso = nomedocaso;
+	public void setEmailVoluntario(String emailVoluntario) {
+		this.emailVoluntario = emailVoluntario;
 	}
 
-	public String getNomedaong() {
-		return nomedaong;
+	public String getProfissão() {
+		return profissão;
 	}
 
-	public void setNomedaong(String nomedaong) {
-		this.nomedaong = nomedaong;
+	public void setProfissão(String profissão) {
+		this.profissão = profissão;
 	}
 
-	public int getCep() {
+	public String getRg() {
+		return rg;
+	}
+
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
+
+	public Long getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(Long cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getCep() {
 		return cep;
 	}
 
-	public void setCep(int cep) {
+	public void setCep(String cep) {
 		this.cep = cep;
 	}
 
@@ -93,11 +110,11 @@ public class Caso {
 		this.rua = rua;
 	}
 
-	public int getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 
@@ -124,7 +141,7 @@ public class Caso {
 	public void setNumMobile(int numMobile) {
 		this.numMobile = numMobile;
 	}
-	
+
 	public String getDescricao() {
 		return descricao;
 	}
@@ -132,29 +149,13 @@ public class Caso {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	public String getRaca() {
-		return raca;
+
+	public String getPassword() {
+		return password;
 	}
 
-	public void setRaca(String raca) {
-		this.raca = raca;
-	}
-
-	public String getEspecie() {
-		return especie;
-	}
-
-	public void setEspecie(String especie) {
-		this.especie = especie;
-	}
-
-	public String getDta_recolhimento() {
-		return dta_recolhimento;
-	}
-
-	public void setDta_recolhimento(String dta_recolhimento) {
-		this.dta_recolhimento = dta_recolhimento;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getImage() {
@@ -165,23 +166,13 @@ public class Caso {
 		this.image = image;
 	}
 
-	
-	public Long getId() {
-		return id;
+	public Doacao getDoacao() {
+		return doacao;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setDoacao(Doacao doacao) {
+		this.doacao = doacao;
 	}
-
-	public String getNome() {
-		return nomedocaso;
-	}
-
-	public void setNome(String nomedocaso) {
-		this.nomedocaso = nomedocaso;
-	}
-
 	
 	@Override
 	public int hashCode() {
@@ -199,7 +190,7 @@ public class Caso {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Caso other = (Caso) obj;
+		Voluntario other = (Voluntario) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -207,6 +198,4 @@ public class Caso {
 			return false;
 		return true;
 	}
-
-
 }
