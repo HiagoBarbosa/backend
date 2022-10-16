@@ -3,12 +3,10 @@ package com.thebehero.ong;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.thebehero.caso.Caso;
 
 
 @Entity
@@ -142,18 +140,7 @@ public class Ong {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	
-	public Caso getCaso() {
-		return caso;
-	}
 
-	public void setCaso(Caso caso) {
-		this.caso = caso;
-	}
-
-	@ManyToOne
-	private Caso caso;
-	  
 		@Override
 		public int hashCode() {
 			final int prime = 31;

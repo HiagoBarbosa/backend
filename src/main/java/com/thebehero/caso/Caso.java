@@ -3,7 +3,6 @@ package com.thebehero.caso;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -182,9 +181,7 @@ public class Caso {
 	public void setNome(String nomedocaso) {
 		this.nomedocaso = nomedocaso;
 	}
-	
-	@JoinColumn(name="caso")
-	
+		
 	@Override
 	public int hashCode() {
 		final int prime = 31;
