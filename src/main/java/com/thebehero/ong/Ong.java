@@ -10,6 +10,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import com.thebehero.caso.Caso;
 
+
 @Entity
 public class Ong {
 	@Id
@@ -140,6 +141,14 @@ public class Ong {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+	
+	public Caso getCaso() {
+		return caso;
+	}
+
+	public void setCaso(Caso caso) {
+		this.caso = caso;
 	}
 
 	@ManyToOne

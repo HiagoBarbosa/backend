@@ -11,12 +11,11 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Caso {
-	
 	@Id
 	@GeneratedValue(generator = "increment")  
 	@GenericGenerator(name = "increment", strategy = "increment")
 	private Long id;
-
+	
 	@NotNull
 	private String nomedocaso;
 	@NotNull
@@ -183,28 +182,6 @@ public class Caso {
 		this.nomedocaso = nomedocaso;
 	}
 
-	public Caso(Long id, @NotNull String nomedocaso, @NotNull String nomedaong, @NotNull String especie,
-			@NotNull String dta_recolhimento, @NotNull String image, @NotNull String raca, @NotNull String descricao,
-			@NotNull String email, @NotNull int cep, @NotNull String rua, int numero, String comp, @NotNull int numFixo,
-			@NotNull int numMobile, @NotNull int cnpj) {
-		super();
-		this.id = id;
-		this.nomedocaso = nomedocaso;
-		this.nomedaong = nomedaong;
-		this.especie = especie;
-		this.dta_recolhimento = dta_recolhimento;
-		this.image = image;
-		this.raca = raca;
-		this.descricao = descricao;
-		this.email = email;
-		this.cep = cep;
-		this.rua = rua;
-		this.numero = numero;
-		this.comp = comp;
-		this.numFixo = numFixo;
-		this.numMobile = numMobile;
-		this.cnpj = cnpj;
-	}
 	
 	@Override
 	public int hashCode() {
