@@ -15,7 +15,6 @@ public class Caso {
 	@GeneratedValue(generator = "increment")  
 	@GenericGenerator(name = "increment", strategy = "increment")
 	private Long id;
-	
 	@NotNull
 	private String nomedocaso;
 	@NotNull

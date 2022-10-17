@@ -3,12 +3,10 @@ package com.thebehero.voluntario;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.thebehero.doacao.Doacao;
 
 @Entity
 public class Voluntario {
@@ -42,10 +40,7 @@ public class Voluntario {
 	@NotNull
 	private String image;
 	
-	
-	@ManyToOne
-	private Doacao doacao;
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -166,13 +161,6 @@ public class Voluntario {
 		this.image = image;
 	}
 
-	public Doacao getDoacao() {
-		return doacao;
-	}
-
-	public void setDoacao(Doacao doacao) {
-		this.doacao = doacao;
-	}
 	
 	@Override
 	public int hashCode() {
