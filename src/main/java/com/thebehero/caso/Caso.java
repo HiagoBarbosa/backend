@@ -11,12 +11,10 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Caso {
-	
 	@Id
 	@GeneratedValue(generator = "increment")  
 	@GenericGenerator(name = "increment", strategy = "increment")
 	private Long id;
-	
 	@NotNull
 	private String nomedocaso;
 	@NotNull
@@ -45,6 +43,7 @@ public class Caso {
 	private int numMobile;
 	@NotNull
 	private int cnpj;
+	
 	public int getCnpj() {
 		return cnpj;
 	}
@@ -181,8 +180,7 @@ public class Caso {
 	public void setNome(String nomedocaso) {
 		this.nomedocaso = nomedocaso;
 	}
-
-	
+		
 	@Override
 	public int hashCode() {
 		final int prime = 31;

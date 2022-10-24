@@ -7,8 +7,6 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.thebehero.ong.Ong;
-
 @Entity
 public class Doacao {
 	@Id
