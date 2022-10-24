@@ -17,7 +17,6 @@ public class LoginsResource {
 	public ResponseEntity<Ong> login(@RequestBody Login login){	
 		Ong ong = new Ong();
 		if(login.getEmailId().equals(ong.getEmail()) & login.getPassword().equals(ong.getPassword()) ) {
-			
 			return ResponseEntity.ok().body(ong);
 		}
 		else {
