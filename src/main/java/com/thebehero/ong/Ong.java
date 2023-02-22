@@ -3,12 +3,11 @@ package com.thebehero.ong;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.thebehero.caso.Caso;
+
 
 @Entity
 public class Ong {
@@ -27,10 +26,10 @@ public class Ong {
 	@NotNull
 	private String rua;
 	@NotNull
-	private int numero;
+	private String numero;
 	private String comp;
-	private int numFixo;
-	private int numMobile;
+	private String numFixo;
+	private String numMobile;
 	@NotNull
 	private String descricao;
 	@NotNull
@@ -86,11 +85,11 @@ public class Ong {
 		this.rua = rua;
 	}
 
-	public int getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 
@@ -102,19 +101,19 @@ public class Ong {
 		this.comp = comp;
 	}
 
-	public int getNumFixo() {
+	public String getNumFixo() {
 		return numFixo;
 	}
 
-	public void setNumFixo(int numFixo) {
+	public void setNumFixo(String numFixo) {
 		this.numFixo = numFixo;
 	}
 
-	public int getNumMobile() {
+	public String getNumMobile() {
 		return numMobile;
 	}
 
-	public void setNumMobile(int numMobile) {
+	public void setNumMobile(String numMobile) {
 		this.numMobile = numMobile;
 	}
 
@@ -142,9 +141,6 @@ public class Ong {
 		this.image = image;
 	}
 
-	@ManyToOne
-	private Caso caso;
-	  
 		@Override
 		public int hashCode() {
 			final int prime = 31;
