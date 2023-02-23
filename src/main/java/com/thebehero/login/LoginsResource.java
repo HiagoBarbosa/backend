@@ -14,13 +14,14 @@ public class LoginsResource {
 
 	
 	@PostMapping
-	public ResponseEntity<Ong> login(@RequestBody Login login){	
+	public ResponseEntity<Class<Ong>> login(@RequestBody Login login){	
 		Ong ong = new Ong();
 		if(login.getEmailId().equals(ong.getEmail()) & login.getPassword().equals(ong.getPassword())) {	
-			return ResponseEntity.status(401).build();
+			return ResponseEntity.ok().body(Ong.class);	
+			
 		}
 		else {
-			return ResponseEntity.ok().body(ong);	
+			return ResponseEntity.status(401).build();
 		}
 	}
 
