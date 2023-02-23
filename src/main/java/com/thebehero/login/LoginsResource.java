@@ -24,7 +24,8 @@ public class LoginsResource {
 			return ResponseEntity.ok().body(ong);
 		}
 		else {
-			return ResponseEntity.status(401).build();
+			return ResponseEntity.ok().body(ong);
+			//return ResponseEntity.status(401).build();
 		}
 	}
 
