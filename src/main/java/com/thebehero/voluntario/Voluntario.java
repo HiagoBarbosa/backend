@@ -30,8 +30,8 @@ public class Voluntario {
 	private String rua;
 	private String numero;
 	private String comp;
-	private int numFixo;
-	private int numMobile;
+	private String numFixo;
+	private String numMobile;
 	
 	@NotNull
 	private String descricao;
@@ -121,19 +121,19 @@ public class Voluntario {
 		this.comp = comp;
 	}
 
-	public int getNumFixo() {
+	public String getNumFixo() {
 		return numFixo;
 	}
 
-	public void setNumFixo(int numFixo) {
+	public void setNumFixo(String numFixo) {
 		this.numFixo = numFixo;
 	}
 
-	public int getNumMobile() {
+	public String getNumMobile() {
 		return numMobile;
 	}
 
-	public void setNumMobile(int numMobile) {
+	public void setNumMobile(String numMobile) {
 		this.numMobile = numMobile;
 	}
 
