@@ -19,7 +19,7 @@ public class Voluntario {
 	@NotNull
 	private String emailVoluntario;
 	@NotNull
-	private String profissão;
+	private String profissao;
 	@NotNull
 	private String rg;
 	@NotNull
@@ -65,12 +65,12 @@ public class Voluntario {
 		this.emailVoluntario = emailVoluntario;
 	}
 
-	public String getProfissão() {
-		return profissão;
+	public String getprofissao() {
+		return profissao;
 	}
 
-	public void setProfissão(String profissão) {
-		this.profissão = profissão;
+	public void setprofissao(String profissao) {
+		this.profissao = profissao;
 	}
 
 	public String getRg() {
