@@ -23,7 +23,7 @@ public class Voluntario {
 	@NotNull
 	private String rg;
 	@NotNull
-	private Long cpf;
+	private String cpf;
 	@NotNull
 	private String cep;
 	@NotNull
@@ -81,11 +81,11 @@ public class Voluntario {
 		this.rg = rg;
 	}
 
-	public Long getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(Long cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
