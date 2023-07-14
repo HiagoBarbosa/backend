@@ -104,11 +104,11 @@ public class ServicoVoluntarioEDoacao {
 		this.email = email;
 	}
 
-	public int getCep() {
+	public String getCep() {
 		return cep;
 	}
 
-	public void setCep(int cep) {
+	public void setCep(String cep) {
 		this.cep = cep;
 	}
 
@@ -120,11 +120,11 @@ public class ServicoVoluntarioEDoacao {
 		this.rua = rua;
 	}
 
-	public int getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 
@@ -136,19 +136,19 @@ public class ServicoVoluntarioEDoacao {
 		this.comp = comp;
 	}
 
-	public int getNumFixo() {
+	public String getNumFixo() {
 		return numFixo;
 	}
 
-	public void setNumFixo(int numFixo) {
+	public void setNumFixo(String numFixo) {
 		this.numFixo = numFixo;
 	}
 
-	public int getNumMobile() {
+	public String getNumMobile() {
 		return numMobile;
 	}
 
-	public void setNumMobile(int numMobile) {
+	public void setNumMobile(String numMobile) {
 		this.numMobile = numMobile;
 	}
 
