@@ -29,15 +29,15 @@ public class ServicoVoluntarioEDoacao {
 	@NotNull
 	private String email;
 	@NotNull
-	private int cep;
+	private String cep;
 	@NotNull
 	private String rua;
-	private int numero;
+	private String numero;
 	private String comp;
 	@NotNull
-	private int numFixo;
+	private String numFixo;
 	@NotNull
-	private int numMobile;
+	private String numMobile;
 	@NotNull
 	private String cpf;
 	public Long getId() {
