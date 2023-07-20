@@ -1,4 +1,4 @@
-package com.thebehero.voluntario;
+package com.thebehero.servicoVoluntarioEDoacao;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,39 +8,38 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.GenericGenerator;
 
 
+
 @Entity
-public class Voluntario {
+public class ServicoVoluntarioEDoacao {
 	@Id
-	@GeneratedValue(generator = "increment")
+	@GeneratedValue(generator = "increment")  
 	@GenericGenerator(name = "increment", strategy = "increment")
 	private Long id;
 	@NotNull
-	private String nomeVoluntario;
+	private String nomedovoluntario;
 	@NotNull
-	private String emailVoluntario;
+	private String nomedadoacao;
+	private String tipodoVoluntariado;
 	@NotNull
-	private String profissao;
+	private String dta_Disponibilidade;
 	@NotNull
-	private String rg;
+	private String image;
 	@NotNull
-	private String cpf;
+	private String descricao;
+	@NotNull
+	private String email;
 	@NotNull
 	private String cep;
 	@NotNull
 	private String rua;
 	private String numero;
 	private String comp;
+	@NotNull
 	private String numFixo;
+	@NotNull
 	private String numMobile;
-	
 	@NotNull
-	private String descricao;
-	@NotNull
-	private String password;
-	@NotNull
-	private String image;
-	
-
+	private String cpf;
 	public Long getId() {
 		return id;
 	}
@@ -49,44 +48,60 @@ public class Voluntario {
 		this.id = id;
 	}
 
-	public String getNomeVoluntario() {
-		return nomeVoluntario;
+	public String getNomedovoluntario() {
+		return nomedovoluntario;
 	}
 
-	public void setNomeVoluntario(String nomeVoluntario) {
-		this.nomeVoluntario = nomeVoluntario;
+	public void setNomedovoluntario(String nomedovoluntario) {
+		this.nomedovoluntario = nomedovoluntario;
 	}
 
-	public String getEmailVoluntario() {
-		return emailVoluntario;
+	public String getNomedadoacao() {
+		return nomedadoacao;
 	}
 
-	public void setEmailVoluntario(String emailVoluntario) {
-		this.emailVoluntario = emailVoluntario;
+	public void setNomedadoacao(String nomedadoacao) {
+		this.nomedadoacao = nomedadoacao;
 	}
 
-	public String getprofissao() {
-		return profissao;
+	public String getTipodoVoluntariado() {
+		return tipodoVoluntariado;
 	}
 
-	public void setprofissao(String profissao) {
-		this.profissao = profissao;
+	public void setTipodoVoluntariado(String tipodoVoluntariado) {
+		this.tipodoVoluntariado = tipodoVoluntariado;
 	}
 
-	public String getRg() {
-		return rg;
+	public String getDta_Disponibilidade() {
+		return dta_Disponibilidade;
 	}
 
-	public void setRg(String rg) {
-		this.rg = rg;
+	public void setDta_Disponibilidade(String dta_Disponibilidade) {
+		this.dta_Disponibilidade = dta_Disponibilidade;
 	}
 
-	public String getCpf() {
-		return cpf;
+	public String getImage() {
+		return image;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getCep() {
@@ -137,31 +152,16 @@ public class Voluntario {
 		this.numMobile = numMobile;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getCpf() {
+		return cpf;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -178,7 +178,7 @@ public class Voluntario {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Voluntario other = (Voluntario) obj;
+		ServicoVoluntarioEDoacao other = (ServicoVoluntarioEDoacao) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -186,4 +186,6 @@ public class Voluntario {
 			return false;
 		return true;
 	}
+
+
 }
