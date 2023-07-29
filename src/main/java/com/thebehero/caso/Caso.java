@@ -3,9 +3,13 @@ package com.thebehero.caso;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
+
+import com.thebehero.ong.Ong;
 
 
 
@@ -43,6 +47,11 @@ public class Caso {
 	private int numMobile;
 	@NotNull
 	private int cnpj;
+	
+	
+	@ManyToOne
+	@JoinColumn(nullable = false, unique = false)
+	private Ong ong;
 	
 	public int getCnpj() {
 		return cnpj;
