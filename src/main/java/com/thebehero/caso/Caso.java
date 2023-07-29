@@ -50,7 +50,7 @@ public class Caso {
 	
 	
 	@ManyToOne
-	@JoinColumn(nullable = false, unique = false)
+	@JoinColumn(nullable = false)
 	private Ong ong;
 	
 	public int getCnpj() {
