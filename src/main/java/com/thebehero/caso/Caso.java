@@ -48,18 +48,6 @@ public class Caso {
 	@NotNull
 	private int cnpj;
 	
-	
-	@ManyToOne
-	@JoinColumn(nullable = false)
-	private Ong ong;
-	
-	public Ong getOng() {
-		return ong;
-	}
-
-	public void setOng(Ong ong) {
-		this.ong = ong;
-	}
 
 	public int getCnpj() {
 		return cnpj;
