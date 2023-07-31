@@ -36,7 +36,7 @@ public class Ong {
 	private String password;
 	@NotNull
 	private String image;
-  
+
 	public Long getId() {
 		return id;
 	}

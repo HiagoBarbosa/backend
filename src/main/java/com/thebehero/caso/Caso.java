@@ -48,6 +48,15 @@ public class Caso {
 	@NotNull
 	private int cnpj;
 	
+	private String IdOng;
+	  
+	public String getIdOng() {
+		return IdOng;
+	}
+
+	public void setIdOng(String idOng) {
+		IdOng = idOng;
+	}
 
 	public int getCnpj() {
 		return cnpj;
